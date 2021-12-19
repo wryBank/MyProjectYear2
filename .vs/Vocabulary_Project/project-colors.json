@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "c9889e4d-ded8-4551-92ac-f808c4a3a7ae": {
+      "ProjectGuid": "c9889e4d-ded8-4551-92ac-f808c4a3a7ae",
+      "DisplayName": "Vocabulary_Project",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 1
+}
