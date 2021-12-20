@@ -27,6 +27,7 @@ namespace Vocabulary_Project
         private char [] answer;
         private string answer2;
         private int _lastButtonClick;
+        private List <int> _StackButtonClick = new List<int> ();
             
         //protected char[] alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
         public Quiz()
@@ -36,7 +37,6 @@ namespace Vocabulary_Project
 
         private void Quiz_Load(object sender, EventArgs e)
         {
-            
             _Page = 1;
             _totalRowCounts = GetRowCount();
             answer2 = _Quiz[_Page - 1].Vocabulary.ToUpper();
@@ -282,6 +282,7 @@ namespace Vocabulary_Project
         {
             ButtonToTextbox(btWord1.Text.ToUpper().ToCharArray());
             _lastButtonClick = 1;
+            _StackButtonClick.Add(_lastButtonClick);
             
                 btWord1.Hide();        
         }
@@ -290,6 +291,7 @@ namespace Vocabulary_Project
         {
             ButtonToTextbox(btWord2.Text.ToUpper().ToCharArray());
             _lastButtonClick = 2;
+            _StackButtonClick.Add(_lastButtonClick);
                 btWord2.Hide();        
         }
 
@@ -297,6 +299,7 @@ namespace Vocabulary_Project
         {
             ButtonToTextbox(btWord3.Text.ToUpper().ToCharArray());
             _lastButtonClick = 3;
+            _StackButtonClick.Add(_lastButtonClick);
                 btWord3.Hide();
 
         }
@@ -306,6 +309,7 @@ namespace Vocabulary_Project
 
             ButtonToTextbox(btWord4.Text.ToUpper().ToCharArray());
             _lastButtonClick = 4;
+            _StackButtonClick.Add(_lastButtonClick);
                 btWord4.Hide();
         }
 
@@ -313,6 +317,7 @@ namespace Vocabulary_Project
         {
             ButtonToTextbox(btWord5.Text.ToUpper().ToCharArray());
             _lastButtonClick = 5;
+            _StackButtonClick.Add(_lastButtonClick);
                 btWord5.Hide();
 
         }
@@ -322,6 +327,7 @@ namespace Vocabulary_Project
 
             ButtonToTextbox(btWord6.Text.ToUpper().ToCharArray());
             _lastButtonClick = 6;
+            _StackButtonClick.Add(_lastButtonClick);
                 btWord6.Hide();
         }
 
@@ -330,6 +336,7 @@ namespace Vocabulary_Project
 
             ButtonToTextbox(btWord7.Text.ToUpper().ToCharArray());
             _lastButtonClick = 7;
+            _StackButtonClick.Add(_lastButtonClick);
                 btWord7.Hide();
         }
 
@@ -338,6 +345,7 @@ namespace Vocabulary_Project
 
             ButtonToTextbox(btWord8.Text.ToUpper().ToCharArray());
             _lastButtonClick = 8;
+            _StackButtonClick.Add(_lastButtonClick);
                 btWord8.Hide();
         }
 
@@ -346,6 +354,7 @@ namespace Vocabulary_Project
 
             ButtonToTextbox(btWord9.Text.ToUpper().ToCharArray());
             _lastButtonClick = 9;
+            _StackButtonClick.Add(_lastButtonClick);
                 btWord9.Hide();
         }
 
@@ -354,6 +363,7 @@ namespace Vocabulary_Project
 
             ButtonToTextbox(btWord10.Text.ToUpper().ToCharArray());
             _lastButtonClick = 10;
+            _StackButtonClick.Add(_lastButtonClick);
                 btWord10.Hide();
         }
         
@@ -431,46 +441,62 @@ namespace Vocabulary_Project
 
         private void btDel_Click(object sender, EventArgs e)
         {
+            _lastButtonClick = _StackButtonClick[_StackButtonClick.Count-1];
+            
+            if(_StackButtonClick[_StackButtonClick.Count-1] ==-1)
+            {
+                _StackButtonClick[_StackButtonClick.Count - 1] = 0;
+            }
             if(_lastButtonClick == 1)
             {
                 btWord1.Show();
+                _StackButtonClick.Remove(_StackButtonClick[_StackButtonClick.Count - 1]);
 
             }
             else if(_lastButtonClick == 2)
             {
                 btWord2.Show();
+                _StackButtonClick.Remove(_StackButtonClick[_StackButtonClick.Count - 1]);
             }
             else if(_lastButtonClick == 3)
             {
                 btWord3.Show();
+                _StackButtonClick.Remove(_StackButtonClick[_StackButtonClick.Count - 1]);
             }
             else if(_lastButtonClick == 4)
             {
                 btWord4.Show();
+                _StackButtonClick.Remove(_StackButtonClick[_StackButtonClick.Count - 1]);
             }
             else if(_lastButtonClick == 5)
             {
                 btWord5.Show();
+                _StackButtonClick.Remove(_StackButtonClick[_StackButtonClick.Count - 1]);
             }
             else if(_lastButtonClick == 6)
             {
                 btWord6.Show();
+                _StackButtonClick.Remove(_StackButtonClick[_StackButtonClick.Count - 1]);
             }
             else if(_lastButtonClick == 7)
             {
                 btWord7.Show();
+                _StackButtonClick.Remove(_StackButtonClick[_StackButtonClick.Count - 1]);
             }
             else if(_lastButtonClick == 8)
             {
                 btWord8.Show();
+                _StackButtonClick.Remove(_StackButtonClick[_StackButtonClick.Count - 1]);
             }
             else if(_lastButtonClick == 9)
             {
                 btWord9.Show();
+                _StackButtonClick.Remove(_StackButtonClick[_StackButtonClick.Count - 1]);
             }
             else if(_lastButtonClick == 10)
             {
                 btWord10.Show();
+                _StackButtonClick.Remove(_StackButtonClick[_StackButtonClick.Count - 1]);
             }
             _lastButtonClick = 0;
             TextRemove();
