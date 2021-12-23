@@ -28,31 +28,6 @@ namespace Vocabulary_Project
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            
-
-        }
-
-        private void lbTitle_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btRegister_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void ButtonLoginEnterEvent(object sender, EventArgs e)
-        {
-
-        }
 
         private void pbRegister_Click(object sender, EventArgs e)
         {

@@ -24,13 +24,11 @@ namespace Vocabulary_Project
         private int _Score { get; set; }
         private Random _random = new Random();
         List <char>alphalist = new List<char>(26) {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z' };
-        //private int countLabel;
         private char [] answer;
         private string answer2;
         private int _lastButtonClick;
         private List <int> _StackButtonClick = new List<int> ();
             
-        //protected char[] alpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".ToCharArray();
         public Quiz()
         {
             InitializeComponent();
@@ -46,21 +44,6 @@ namespace Vocabulary_Project
             pbQuiz.Image = Image.FromFile(directoryInfo);
             lbScore.Text = _Score.ToString();
             GetButtonWord();
-            //SuffleList();
-        }
-        private string SuffleList()
-        {
-            var rnd = new Random();
-            var randomized = answer.OrderBy(item => rnd.Next());
-
-            //int i = 0;
-            foreach (var value in randomized)
-            {
-                Console.WriteLine(value);
-                MessageBox.Show(value.ToString());
-                return value.ToString();
-            }
-            return alphalist.ToString();
         }
         private void GetButtonWord()
         {
@@ -74,12 +57,6 @@ namespace Vocabulary_Project
                 {
                     btWord1.Text = alphalist[numran].ToString();
                     
-                    //if(numran >alphalist.Count / 2)
-                    //{
-                    //    MessageBox.Show("numran = " + numran);
-                    //    btWord1.Text = answer[ranWordAnswer].ToString();
-                        
-                    //}
                 }
                 else if(i == 1)
                 {
@@ -126,7 +103,6 @@ namespace Vocabulary_Project
 
                 }
             }
-            //KeepWord = _Quiz[_totalRowCounts - 1].Vocabulary.ToCharArray();
             
             
 
@@ -165,38 +141,6 @@ namespace Vocabulary_Project
             return Quizlist;
 
         }
-        //private void ButtonTo_Label(string text)
-        //{
-        //    if(countLabel == 0)
-        //    {
-        //        lbWord1.Text = text.ToUpper();
-        //    }
-        //    else if(countLabel == 1)
-        //    {
-        //        lbWord2.Text = text.ToUpper();
-        //    }
-        //    else if(countLabel == 2)
-        //    {
-        //        lbWord3.Text = text.ToUpper();
-        //    }
-        //    else if(countLabel == 3)
-        //    {
-        //        lbWord4.Text = text.ToUpper();
-        //    }
-        //    else if(countLabel == 4)
-        //    {
-        //        lbWord5.Text = text.ToUpper();
-        //    }
-        //    else if(countLabel == 5)
-        //    {
-        //        lbWord6.Text = text.ToUpper();
-        //    }
-        //    if(countLabel > 5)
-        //    {
-        //        //MessageBox.Show("Full");
-        //    }
-        //    countLabel++;
-        //}
         private void reset()
         {
             GetButtonWord();
@@ -210,15 +154,6 @@ namespace Vocabulary_Project
             btWord8.Show();
             btWord9.Show();
             btWord10.Show();
-            //tbTextSelected.Text = null;
-            //keepword.Clear();
-            //lbWord1.Text = "___";
-            //lbWord2.Text = "___";
-            //lbWord3.Text = "___";
-            //lbWord4.Text = "___";
-            //lbWord5.Text = "___";
-            //lbWord6.Text = "___";
-            //countLabel = 0;
 
         }
         private void resetToNextPage()
@@ -236,7 +171,6 @@ namespace Vocabulary_Project
             btWord10.Show();
             tbTextSelected.Text = null;
             keepword.Clear();
-            //countLabel = 0;
 
 
         }
@@ -245,9 +179,6 @@ namespace Vocabulary_Project
         private void ButtonToTextbox(char [] text)
         {
             string listToText;
-            //foreach (char c in answer){
-            //    keepword.Add(c);
-            //}
             for(int k = 0; k< text.Length; k++)
             {
                 keepword.Add(text[k]); 
@@ -371,17 +302,6 @@ namespace Vocabulary_Project
 
         private void btnNext_Click(object sender, EventArgs e)
         {
-            //if (lbWord1.Text.Equals(answer[i].ToString()) && lbWord2.Text.Equals(answer[i+1].ToString()) && lbWord3.Text.Equals(answer[i+2].ToString()) && lbWord4.Text.Equals(answer[i+3].ToString()) && lbWord5.Text.Equals(answer[i+4].ToString()) && lbWord6.Text.Equals(answer[i+5].ToString()))
-            //{
-            //        MessageBox.Show("test");
-            //    _Score++;
-
-            //}
-            //else
-            //{
-            //        MessageBox.Show("worng");
-
-            //})
             string directorySound = System.IO.Directory.GetParent(Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()))).ToString() + @"\Sound\CorretSound.wav";
             SoundPlayer Sound = new SoundPlayer(directorySound);
             string directoryBadSound = System.IO.Directory.GetParent(Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()))).ToString() + @"\Sound\notCorretSound.wav";
@@ -407,7 +327,6 @@ namespace Vocabulary_Project
         {
             
             _totalRowCounts = GetRowCount();
-            //MessageBox.Show("answer" + _Quiz[_Page - 1].Vocabulary.ToUpper().ToString());
             if(_Page > _totalRowCounts)
             {
                 int allrowcount = GetRowCount();
