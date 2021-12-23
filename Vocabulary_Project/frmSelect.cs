@@ -23,6 +23,7 @@ namespace Vocabulary_Project
 
         private void pbLearnIcon_Click(object sender, EventArgs e)
         {
+            this.Hide();
             frmLearn frmlearn = new frmLearn();
             frmlearn.ShowDialog();
         }
@@ -37,9 +38,9 @@ namespace Vocabulary_Project
 
         private void pbTestIcon_Click(object sender, EventArgs e)
         {
+            
             this.Hide();
             Quiz frmquiz = new Quiz();
-            
             frmquiz.ShowDialog();
         }
     }

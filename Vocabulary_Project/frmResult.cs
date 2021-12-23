@@ -33,7 +33,9 @@ namespace Vocabulary_Project
                 starIcon4.Hide();
                 starIcon5.Hide();
                 lbScore.Text = score.ToString() +" / " + allVocabulary.ToString();
-                calScore(score);
+                 score  = Convert.ToInt32(((float)score / allVocabulary) * 100f);
+            MessageBox.Show("Score = " + score);
+                calScore(Convert.ToInt32(score));
             
         }
         private void showStar(int star)
@@ -81,32 +83,33 @@ namespace Vocabulary_Project
         }
         private void calScore(int score)
         {
-            this.score  = (score / allVocabulary) * 100;
-            int star;
-            if(score > 100)
-            {
-                star = 5;
-            }
-            else if(score > 80)
-            {
-                star = 4;
-            }
-            else if(score > 60)
-            {
-                star = 3;
-            }
-            else if(score > 40)
-            {
-                star = 2;
-            }
-            else if(score >0)
-            {
-                star = 1;
-            }
-            else
+
+            int star = 0;
+            if(score <=0)
             {
                 star = 0;
             }
+            else if(score > 0 && score <=40)
+            {
+                star = 1;
+            }
+            else if(score >40 && score <=60)
+            {
+                star = 2;
+            }
+            else if(score >60 & score <=80)
+            {
+                star = 3;
+            }
+            else if(score >80 && score <=100)
+            {
+                star = 4;
+            }
+            else if(score >100)
+            {
+                star = 5;
+            }
+            MessageBox.Show("star" + star);
             showStar(star);
             
         }

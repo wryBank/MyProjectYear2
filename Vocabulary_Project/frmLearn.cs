@@ -35,7 +35,17 @@ namespace Vocabulary_Project
             //MessageBox.Show("answer" + _Quiz[_Page - 1].Vocabulary.ToUpper().ToString());
             if(_Page > _totalRowCounts)
             {
-                _Page--;
+                CustomMSB MSG = new CustomMSB();
+                bool check =  MSG.GotoQuiz();
+                if(check == true)
+                {
+                    this.Close();
+                }
+                else if(check == false)
+                {
+                    _Page--;
+
+                }
                 
             }
             else
@@ -43,7 +53,6 @@ namespace Vocabulary_Project
                 string directoryInfo = System.IO.Directory.GetParent(Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()))).ToString() + @"\Pic\" + Vocabulary[_Page - 1].PicFile;
                 pbPic.Image = Image.FromFile(directoryInfo);
                 lbVocabulary.Text = Vocabulary[_Page -1].Vocabulary;
-
             }
         }
 

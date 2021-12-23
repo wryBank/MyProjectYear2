@@ -15,6 +15,7 @@ namespace Vocabulary_Project
     {
         static string _buttonPassSound = System.IO.Directory.GetParent(Path.GetDirectoryName(Path.GetDirectoryName(System.IO.Directory.GetCurrentDirectory()))).ToString() + @"\Sound\pop.wav";
         SoundPlayer popSound = new SoundPlayer(_buttonPassSound);
+        CustomMSB MSB = new CustomMSB();
         public frmRegister()
         {
             InitializeComponent();
@@ -29,7 +30,7 @@ namespace Vocabulary_Project
         {
             if (tbUsername.Text.Equals("") || (tbPassword.Text.Equals("")))
             { 
-                MessageBox.Show("Username and Password can't be emty");
+                MSB.JustMessage("Username and Password \n can't be emty");
             }
             else
             {
@@ -38,15 +39,26 @@ namespace Vocabulary_Project
                     conn.Open();
                     string Username = tbUsername.Text;
                     string Password = tbPassword.Text;
-                    string command = "INSERT INTO [Vocabulary_Project].[dbo].[Users] ( Username , Password) VALUES ('"+Username+"','"+Password+"')"; 
-                    int query = SQLHelper.ExecuteNonQuery(conn, command, null);
-                    if(query > 0)
+                    string command = "SELECT * FROM [Vocabulary_Project].[dbo].[Users] WHERE Username = '" + Username+"'";
+                    SqlDataReader reader = SQLHelper.ExecuteReader(conn, CommandType.Text, command, null);
+                    if (reader.HasRows)
                     {
-                        MessageBox.Show("Done.");
-
+                        MSB.JustMessage("this Username \n has already been registered.");
                     }
-                    conn.Close();
+                    else
+                    {
 
+                        string command2 = "INSERT INTO [Vocabulary_Project].[dbo].[Users] ( Username , Password) VALUES ('" + Username + "','" + Password + "')";
+                        int query = SQLHelper.ExecuteNonQuery(conn, command2, null);
+                        if (query > 0)
+                        {
+                            MSB.JustMessage("Register success.");
+                            frmLogin login = new frmLogin();
+                            login.ShowDialog();
+                            this.Close();
+                        }
+                    }
+                        conn.Close();
                 }
 
             }

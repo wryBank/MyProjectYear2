@@ -20,6 +20,7 @@ namespace Vocabulary_Project
         private List<QuizModel> _Quiz;
         private int _totalRowCounts;
         private int _Page;
+
         private int _Score { get; set; }
         private Random _random = new Random();
         List <char>alphalist = new List<char>(26) {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z' };
@@ -52,7 +53,7 @@ namespace Vocabulary_Project
             var rnd = new Random();
             var randomized = answer.OrderBy(item => rnd.Next());
 
-            int i = 0;
+            //int i = 0;
             foreach (var value in randomized)
             {
                 Console.WriteLine(value);
@@ -411,13 +412,9 @@ namespace Vocabulary_Project
             {
                 int allrowcount = GetRowCount();
                 lbScore.Text = _Score.ToString();
-
                 this.Hide();
-                
                 frmResult result = new frmResult(_Score,allrowcount);
                 result.ShowDialog();
-
-                
             }
             else
             {
@@ -441,62 +438,66 @@ namespace Vocabulary_Project
 
         private void btDel_Click(object sender, EventArgs e)
         {
-            _lastButtonClick = _StackButtonClick[_StackButtonClick.Count-1];
-            
-            if(_StackButtonClick[_StackButtonClick.Count-1] ==-1)
+            if (tbTextSelected.Text.Equals(""))
             {
-                _StackButtonClick[_StackButtonClick.Count - 1] = 0;
-            }
-            if(_lastButtonClick == 1)
-            {
-                btWord1.Show();
-                _StackButtonClick.Remove(_StackButtonClick[_StackButtonClick.Count - 1]);
 
             }
-            else if(_lastButtonClick == 2)
+            else
             {
-                btWord2.Show();
-                _StackButtonClick.Remove(_StackButtonClick[_StackButtonClick.Count - 1]);
-            }
-            else if(_lastButtonClick == 3)
-            {
-                btWord3.Show();
-                _StackButtonClick.Remove(_StackButtonClick[_StackButtonClick.Count - 1]);
-            }
-            else if(_lastButtonClick == 4)
-            {
-                btWord4.Show();
-                _StackButtonClick.Remove(_StackButtonClick[_StackButtonClick.Count - 1]);
-            }
-            else if(_lastButtonClick == 5)
-            {
-                btWord5.Show();
-                _StackButtonClick.Remove(_StackButtonClick[_StackButtonClick.Count - 1]);
-            }
-            else if(_lastButtonClick == 6)
-            {
-                btWord6.Show();
-                _StackButtonClick.Remove(_StackButtonClick[_StackButtonClick.Count - 1]);
-            }
-            else if(_lastButtonClick == 7)
-            {
-                btWord7.Show();
-                _StackButtonClick.Remove(_StackButtonClick[_StackButtonClick.Count - 1]);
-            }
-            else if(_lastButtonClick == 8)
-            {
-                btWord8.Show();
-                _StackButtonClick.Remove(_StackButtonClick[_StackButtonClick.Count - 1]);
-            }
-            else if(_lastButtonClick == 9)
-            {
-                btWord9.Show();
-                _StackButtonClick.Remove(_StackButtonClick[_StackButtonClick.Count - 1]);
-            }
-            else if(_lastButtonClick == 10)
-            {
-                btWord10.Show();
-                _StackButtonClick.Remove(_StackButtonClick[_StackButtonClick.Count - 1]);
+                _lastButtonClick = _StackButtonClick[_StackButtonClick.Count - 1];
+
+
+                if (_lastButtonClick == 1)
+                {
+                    btWord1.Show();
+                    _StackButtonClick.Remove(_StackButtonClick[_StackButtonClick.Count - 1]);
+
+                }
+                else if (_lastButtonClick == 2)
+                {
+                    btWord2.Show();
+                    _StackButtonClick.Remove(_StackButtonClick[_StackButtonClick.Count - 1]);
+                }
+                else if (_lastButtonClick == 3)
+                {
+                    btWord3.Show();
+                    _StackButtonClick.Remove(_StackButtonClick[_StackButtonClick.Count - 1]);
+                }
+                else if (_lastButtonClick == 4)
+                {
+                    btWord4.Show();
+                    _StackButtonClick.Remove(_StackButtonClick[_StackButtonClick.Count - 1]);
+                }
+                else if (_lastButtonClick == 5)
+                {
+                    btWord5.Show();
+                    _StackButtonClick.Remove(_StackButtonClick[_StackButtonClick.Count - 1]);
+                }
+                else if (_lastButtonClick == 6)
+                {
+                    btWord6.Show();
+                    _StackButtonClick.Remove(_StackButtonClick[_StackButtonClick.Count - 1]);
+                }
+                else if (_lastButtonClick == 7)
+                {
+                    btWord7.Show();
+                    _StackButtonClick.Remove(_StackButtonClick[_StackButtonClick.Count - 1]);
+                }
+                else if (_lastButtonClick == 8)
+                {
+                    btWord8.Show();
+                    _StackButtonClick.Remove(_StackButtonClick[_StackButtonClick.Count - 1]);
+                }
+                else if (_lastButtonClick == 9)
+                {
+                    btWord9.Show();
+                    _StackButtonClick.Remove(_StackButtonClick[_StackButtonClick.Count - 1]);
+                }
+                else if (_lastButtonClick == 10)
+                {
+                    btWord10.Show();
+                    _StackButtonClick.Remove(_StackButtonClick[_StackButtonClick.Count - 1]);
+                }
             }
             _lastButtonClick = 0;
             TextRemove();
