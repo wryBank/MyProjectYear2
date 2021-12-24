@@ -20,7 +20,6 @@ namespace Vocabulary_Project
         private List<QuizModel> _Quiz;
         private int _totalRowCounts;
         private int _Page;
-
         private int _Score { get; set; }
         private Random _random = new Random();
         List <char>alphalist = new List<char>(26) {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z' };
@@ -319,7 +318,10 @@ namespace Vocabulary_Project
                 BadSound.Play();
 
             }
-                _Page++;
+
+
+
+            _Page++;
                 resetToNextPage();
                 nextPage();
         }

@@ -21,7 +21,6 @@ namespace Vocabulary_Project
         SoundPlayer popSound = new SoundPlayer(_buttonPassSound);
         public static string Username;
         static string Password;
-        public Result userInfo { get; set; }
         
         public frmLogin()
         {
@@ -49,7 +48,17 @@ namespace Vocabulary_Project
                 if (reader.HasRows)
                 {
                     this.Hide();
-                    frmSelect frmSelect = new frmSelect();
+                    bool checkAdmin;
+                    if (tbUsername.Text.Equals("admin"))
+                    {
+                        checkAdmin = true;
+                    }
+                    else
+                    {
+                        checkAdmin = false;
+
+                    }
+                    frmSelect frmSelect = new frmSelect(checkAdmin);
                     frmSelect.ShowDialog();
                 }
                 else
@@ -79,6 +88,11 @@ namespace Vocabulary_Project
         {
 
             popSound.Play();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

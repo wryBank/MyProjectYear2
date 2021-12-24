@@ -58,6 +58,7 @@
             this.tbPassword.ForeColor = System.Drawing.Color.White;
             this.tbPassword.Location = new System.Drawing.Point(316, 227);
             this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(260, 36);
             this.tbPassword.TabIndex = 4;
             // 
@@ -73,7 +74,6 @@
             this.pnlRegister.Name = "pnlRegister";
             this.pnlRegister.Size = new System.Drawing.Size(801, 452);
             this.pnlRegister.TabIndex = 7;
-            this.pnlRegister.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlRegister_Paint);
             // 
             // pbExit
             // 

@@ -11,13 +11,29 @@ namespace Vocabulary_Project
 {
     public partial class frmSelect : Form
     {
+        bool Isadmin;
         public frmSelect()
         {
             InitializeComponent();
         }
 
+        public frmSelect(bool Isadmin)
+        {
+            InitializeComponent();
+            this.Isadmin = Isadmin;
+        }
         private void frmSelect_Load(object sender, EventArgs e) { 
 
+            if(Isadmin == true)
+            {
+                pbNewV.Show();
+                lbAddV.Show();
+            }
+            else
+            {
+                lbAddV.Hide();
+                pbNewV.Hide();
+            }
 
         }
 
@@ -42,6 +58,14 @@ namespace Vocabulary_Project
             this.Hide();
             Quiz frmquiz = new Quiz();
             frmquiz.ShowDialog();
+        }
+
+        private void pbNewV_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            frmAdmin addVo = new frmAdmin();
+            addVo.ShowDialog();
+
         }
     }
 }

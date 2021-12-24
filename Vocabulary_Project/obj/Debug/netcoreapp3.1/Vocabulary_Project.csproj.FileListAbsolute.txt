@@ -176,3 +176,4 @@ C:\Users\TER\Desktop\Warayut\MyProjectYear2\Vocabulary_Project\obj\Debug\netcore
 C:\Users\TER\Desktop\Warayut\MyProjectYear2\Vocabulary_Project\obj\Debug\netcoreapp3.1\Vocabulary_Project.dll
 C:\Users\TER\Desktop\Warayut\MyProjectYear2\Vocabulary_Project\obj\Debug\netcoreapp3.1\Vocabulary_Project.pdb
 C:\Users\TER\Desktop\Warayut\MyProjectYear2\Vocabulary_Project\obj\Debug\netcoreapp3.1\Vocabulary_Project.genruntimeconfig.cache
+C:\Users\waray\source\repos\Vocabulary_Project\Vocabulary_Project\obj\Debug\netcoreapp3.1\Vocabulary_Project.frmAdmin.resources

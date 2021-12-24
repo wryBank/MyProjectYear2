@@ -79,14 +79,11 @@ namespace Vocabulary_Project
             MSB.MSG_EXIT();
         }
 
-        private void pnlRegister_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         private void pbBack_MouseEnter(object sender, EventArgs e)
         {
             popSound.Play();
         }
+
     }
 }

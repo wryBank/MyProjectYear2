@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\TER\\Desktop\\Warayut\\MyProjectYear2\\Vocabulary_Project\\Vocabulary_Project.csproj": {}
+    "C:\\Users\\waray\\source\\repos\\Vocabulary_Project\\Vocabulary_Project\\Vocabulary_Project.csproj": {}
   },
   "projects": {
-    "C:\\Users\\TER\\Desktop\\Warayut\\MyProjectYear2\\Vocabulary_Project\\Vocabulary_Project.csproj": {
+    "C:\\Users\\waray\\source\\repos\\Vocabulary_Project\\Vocabulary_Project\\Vocabulary_Project.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\TER\\Desktop\\Warayut\\MyProjectYear2\\Vocabulary_Project\\Vocabulary_Project.csproj",
+        "projectUniqueName": "C:\\Users\\waray\\source\\repos\\Vocabulary_Project\\Vocabulary_Project\\Vocabulary_Project.csproj",
         "projectName": "Vocabulary_Project",
-        "projectPath": "C:\\Users\\TER\\Desktop\\Warayut\\MyProjectYear2\\Vocabulary_Project\\Vocabulary_Project.csproj",
-        "packagesPath": "C:\\Users\\TER\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\TER\\Desktop\\Warayut\\MyProjectYear2\\Vocabulary_Project\\obj\\",
+        "projectPath": "C:\\Users\\waray\\source\\repos\\Vocabulary_Project\\Vocabulary_Project\\Vocabulary_Project.csproj",
+        "packagesPath": "C:\\Users\\waray\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\waray\\source\\repos\\Vocabulary_Project\\Vocabulary_Project\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\TER\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\waray\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -71,7 +67,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100\\RuntimeIdentifierGraph.json"
         }
       }
     }

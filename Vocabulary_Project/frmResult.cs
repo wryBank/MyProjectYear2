@@ -13,7 +13,7 @@ namespace Vocabulary_Project
     {
         public int score { get; set; }
         public int allVocabulary { get; set; }
-        public Result userInfo { get; set; }
+
         public frmResult()
         {
             InitializeComponent();
@@ -34,7 +34,6 @@ namespace Vocabulary_Project
                 starIcon5.Hide();
                 lbScore.Text = score.ToString() +" / " + allVocabulary.ToString();
                  score  = Convert.ToInt32(((float)score / allVocabulary) * 100f);
-            MessageBox.Show("Score = " + score);
                 calScore(Convert.ToInt32(score));
             
         }
@@ -113,7 +112,6 @@ namespace Vocabulary_Project
             {
                 star = 0;
             }
-            MessageBox.Show("star" + star);
             showStar(star);
             
         }

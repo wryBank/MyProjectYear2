@@ -39,6 +39,10 @@ namespace Vocabulary_Project
         {
             _text = "Exit Program";
             _exitProgram = true;
+            pbNo.Image=Image.FromFile(ButtonNo);
+            pbYes.Image=Image.FromFile(ButtonYes);
+            pbYes.Show();
+            pbNo.Show();
             this.ShowDialog();
         }
         private void CustomMSB_Load(object sender, EventArgs e)
