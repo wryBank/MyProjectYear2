@@ -6,7 +6,7 @@ namespace Vocabulary_Project
 {
     public class SQLHelper
     {
-        private static string CONNECTION_STRING = @"Data Source=DESKTOP-V7M6UD9;Integrated Security=True;MultipleActiveResultSets=True;";
+        private static string CONNECTION_STRING = @"Data Source=DESKTOP-UNJDPAJ;Integrated Security=True;MultipleActiveResultSets=True;";
         public static string ConnectionString { get { return CONNECTION_STRING; } }
 
         public static int ExecuteNonQuery(SqlConnection conn, string cmdText, SqlParameter[] cmdParms)
